@@ -94,7 +94,7 @@ class XAxis extends Component
 
 
     return connectDropTarget(
-      <div style={{"height" : "200px", "width" : "200px", "background-color": "#99ccff"}}>
+      <div style={{"height" : "200px", "width" : "200px", "backgroundColor": "#99ccff"}}>
         {isOver && canDrop && <div class='green' />}
         {!isOver && canDrop && <div class='yellow' />}
         {isOver && !canDrop && <div class='red' />}
