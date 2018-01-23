@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Card from './Card';
+import XAxis from './XAxis';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContextProvider } from 'react-dnd';
+
+
 
 class App extends Component {
   render() {
     return (
+       <DragDropContextProvider backend={HTML5Backend}>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Card text='Write the docs' />
+        <br />
+        <XAxis />
       </div>
+       </DragDropContextProvider>
+
     );
   }
 }
