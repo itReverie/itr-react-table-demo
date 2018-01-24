@@ -13,13 +13,9 @@ import Container from './DragAndDrop/Container';
 class App extends Component {
   render() {
     return (
-
-      <div className="App">
-
+      <div className="App" style={ {"margin":"100px"}}>
         <Container />
       </div>
-
-
     );
   }
 }

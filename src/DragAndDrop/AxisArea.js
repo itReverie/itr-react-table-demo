@@ -49,18 +49,18 @@ export default class AxisArea extends Component {
 		} = this.props
 		const isActive = isOver && canDrop
 
-		let backgroundColor = '#222'
+		let backgroundColor = '#cc3399'
 		if (isActive) {
-			backgroundColor = 'darkgreen'
+			backgroundColor = '#ffccff'
 		} else if (canDrop) {
-			backgroundColor = 'darkkhaki'
+			backgroundColor = 'pink'
 		}
 
 		return connectDropTarget(
 			<div style={{ ...style, backgroundColor }}>
 				{isActive
 					? 'Release to drop'
-					: `This AxisArea accepts: ${accepts.join(', ')}`}
+					: `This AxisArea accepts a ${accepts.join(', ')}`}
 
 				{lastDroppedItem && (
 					<p>Last dropped: {JSON.stringify(lastDroppedItem)}</p>
