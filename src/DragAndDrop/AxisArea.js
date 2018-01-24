@@ -23,8 +23,13 @@ const AxisAreaTarget = {
 
 
 
-
-class AxisArea extends Component {
+@DropTarget(props => props.accepts, AxisAreaTarget,
+	(connect, monitor) => ({
+												connectDropTarget: connect.dropTarget(),
+												isOver: monitor.isOver(),
+												canDrop: monitor.canDrop(),
+}))
+export default class AxisArea extends Component {
 	static propTypes = {
 		connectDropTarget: PropTypes.func.isRequired,
 		isOver: PropTypes.bool.isRequired,
@@ -64,10 +69,3 @@ class AxisArea extends Component {
 		)
 	}
 }
-
-
-export default DropTarget(props => props.accepts, AxisAreaTarget, (connect, monitor) => ({
-	connectDropTarget: connect.dropTarget(),
-	isOver: monitor.isOver(),
-	canDrop: monitor.canDrop(),
-}))(AxisArea);

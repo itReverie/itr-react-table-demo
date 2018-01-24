@@ -12,10 +12,10 @@ export default class Container extends Component {
 		super(props)
 		this.state = {
 			axisArea: [
-				{ accepts: [ItemTypes.COLUMNS], lastDroppedItem: null },
+				{ accepts: [ItemTypes.COLUMN], lastDroppedItem: null }
 			],
 			columns: [
-				{ name: 'Column A', type: ItemTypes.COLUMNS },
+				{ name: 'ColumnA', type: ItemTypes.COLUMN }
 			],
 			droppedColumnNames: [],
 		}

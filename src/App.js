@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Card from './Card';
-import XAxis from './XAxis';
-import Container from './DragAndDrop/Container';
-import HTML5Backend from 'react-dnd-html5-backend';
-import { DragDropContextProvider } from 'react-dnd';
 
+import Container from './DragAndDrop/Container';
+//import HTML5Backend from 'react-dnd-html5-backend';
+//import { DragDropContextProvider } from 'react-dnd';
+// <DragDropContextProvider backend={HTML5Backend}>
+//</DragDropContextProvider>
+//import withDragDropContext from './lib/withDragDropContext';
 
 
 class App extends Component {
   render() {
     return (
-       <DragDropContextProvider backend={HTML5Backend}>
+
       <div className="App">
-        <Card text='Write the docs' />
-        <br />
-        <XAxis />
-        <br />
+
         <Container />
       </div>
-       </DragDropContextProvider>
+
 
     );
   }
