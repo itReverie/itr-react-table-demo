@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import update from 'immutability-helper';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend, { NativeTypes } from 'react-dnd-html5-backend';
-import AxisArea from './AxisArea';
-import Column from './Column';
-import ItemTypes from './ItemTypes';
+import AxisArea from '../AxisArea/AxisArea';
+import Column from '../Column/Column';
+import ItemTypes from '../ItemTypes';
 
 @DragDropContext(HTML5Backend)
 export default class Container extends Component {

@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-import Container from './DragAndDrop/Container';
+import Docs from './docs/Docs';
+//import Container from './components/Container/Container';
 //import HTML5Backend from 'react-dnd-html5-backend';
-//import { DragDropContextProvider } from 'react-dnd';
-// <DragDropContextProvider backend={HTML5Backend}>
-//</DragDropContextProvider>
-//import withDragDropContext from './lib/withDragDropContext';
-
+//<Container />
 
 class App extends Component {
   render() {
     return (
       <div className="App" style={ {"margin":"100px"}}>
-        <Container />
+
+        <Docs />
       </div>
     );
   }

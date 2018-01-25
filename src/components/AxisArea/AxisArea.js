@@ -31,11 +31,17 @@ const AxisAreaTarget = {
 }))
 export default class AxisArea extends Component {
 	static propTypes = {
+		/** Connection to the drop target */
 		connectDropTarget: PropTypes.func.isRequired,
+		/** Detects if there is an item over this area */
 		isOver: PropTypes.bool.isRequired,
+		/** Detects if the item over this area can be dropped here*/
 		canDrop: PropTypes.bool.isRequired,
+		/** Detects the types of object valid to drop in this area*/
 		accepts: PropTypes.arrayOf(PropTypes.string).isRequired,
+		/** Detects which was the last item dropped*/
 		lastDroppedItem: PropTypes.object,
+		/** Action to release when a item is dropped*/
 		onDrop: PropTypes.func.isRequired,
 	}
 

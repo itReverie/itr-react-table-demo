@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { DragSource } from 'react-dnd'
+import ItemTypes from '../ItemTypes';
 
 const style = {
 	border: '1px dashed gray',
@@ -24,13 +25,26 @@ const boxSource = {
 	connectDragSource: connect.dragSource(),
 	isDragging: monitor.isDragging(),
 }))
+/** This component represent a column of a dataset*/
 export default class Column extends Component {
 	static propTypes = {
+		/** source where this item can be dropped */
 		connectDragSource: PropTypes.func.isRequired,
+		/** flag to determine if the item is being dragged*/
 		isDragging: PropTypes.bool.isRequired,
+		/** name */
 		name: PropTypes.string.isRequired,
+		/** type of item to be dragged*/
 		type: PropTypes.string.isRequired,
+		/** flag to determine if it is being dragged*/
 		isDropped: PropTypes.bool.isRequired,
+	}
+
+	static defaultProps={
+		isDragging: true,
+		name: 'Column',
+		type: ItemTypes.COLUMN,
+		isDropped: true
 	}
 
 	render() {
