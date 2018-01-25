@@ -32,6 +32,7 @@ class Example extends React.Component {
           </a>
         </p>
 
+
         {showCode && <CodeExample>{code}</CodeExample>}
       </div>
     )
