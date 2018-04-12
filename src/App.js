@@ -5,7 +5,9 @@ import tableData from '../src/data/Table';
 import ItemTypes from '../src/components/ItemTypes';
 //import Docs from './docs/Docs';
 //<Docs />
-import Container from './components/Container/Container';
+//import Container from './components/Container/Container';
+import TaskApp from './multi-drag/task-app';
+
 //<Container />
 
 class App extends Component {
@@ -21,10 +23,11 @@ class App extends Component {
     return result;
   }
 
+  //<Container columns={this.getColumns()} />
   render() {
     return (
       <div className="App" style={ {"margin":"100px"}}>
-      <Container columns={this.getColumns()} />
+       <TaskApp />
       </div>
     );
   }
