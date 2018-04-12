@@ -64,12 +64,10 @@ export default class AxisArea extends Component {
 
 		return connectDropTarget(
 			<div style={{ ...style, backgroundColor }}>
-				{isActive
-					? 'Release to drop'
-					: `This AxisArea accepts a ${accepts.join(', ')}`}
+				
 
 				{lastDroppedItem && (
-					<p>Last dropped: {JSON.stringify(lastDroppedItem)}</p>
+					<p>{lastDroppedItem.name}</p>
 				)}
 			</div>,
 		)

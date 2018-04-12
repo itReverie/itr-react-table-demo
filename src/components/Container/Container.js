@@ -14,9 +14,10 @@ export default class Container extends Component {
 			axisArea: [
 				{ accepts: [ItemTypes.COLUMN], lastDroppedItem: null }
 			],
-			columns: [
-				{ name: 'ColumnA', type: ItemTypes.COLUMN }
-			],
+			columns: this.props.columns,
+			// [
+			// 	{ name: 'ColumnA', draggableType: ItemTypes.COLUMN }
+			// ],
 			droppedColumnNames: [],
 		}
 	}
@@ -42,10 +43,10 @@ export default class Container extends Component {
 				</div>
 
 				<div style={{ overflow: 'hidden', clear: 'both' }}>
-					{columns.map(({ name, type }, index) => (
+					{columns.map(({ name, draggableType }, index) => (
 						<Column
 							name={name}
-							type={type}
+							type={draggableType}
 							isDropped={this.isDropped(name)}
 							key={index}
 						/>
@@ -73,5 +74,3 @@ export default class Container extends Component {
 		)
 	}
 }
-
-//export default DragDropContext(HTML5Backend)(Container);
