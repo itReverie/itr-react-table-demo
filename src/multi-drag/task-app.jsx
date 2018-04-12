@@ -26,6 +26,8 @@ const getTasks = (entities: Entities, columnId: Id): Task[] =>
   entities.columns[columnId].taskIds.map(
     (taskId: Id): Task => entities.tasks[taskId]
   );
+
+
 export default class TaskApp extends Component<*, State> {
   state: State = {
     entities: initial,
