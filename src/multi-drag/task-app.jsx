@@ -27,6 +27,10 @@ const getTasks = (entities: Entities, columnId: Id): Task[] =>
     (taskId: Id): Task => entities.tasks[taskId]
   );
 
+const getTasksOfTable = (entities: Entities): Task[] =>
+  console.log(entities.columns.table)
+  
+
 
 export default class TaskApp extends Component<*, State> {
   state: State = {
@@ -204,7 +208,9 @@ export default class TaskApp extends Component<*, State> {
               multiSelectTo={this.multiSelectTo}
             />
           ))}
+         
         </Container>
+        <button onClick={getTasksOfTable(entities)}>Query</button>
       </DragDropContext>
     );
   }

@@ -75,6 +75,7 @@ export default class Column extends Component<Props> {
                 const isSelected: boolean = Boolean(getSelectedMap(selectedTaskIds)[task.id]);
                 const isGhosting: boolean =
                   isSelected && Boolean(draggingTaskId) && draggingTaskId !== task.id;
+                
                 return (
                   <Task
                     task={task}
