@@ -2,7 +2,7 @@
 import type { Column, ColumnMap, Entities } from './types';
 import type { Id } from '../types';
 import type { DraggableLocation } from 'react-beautiful-dnd/src/types';
-import reorder from '../reorder';
+//import reorder from '../reorder';
 
 type Args = {|
   entities: Entities,
@@ -16,6 +16,16 @@ export type Result = {|
   // a drop operations can change the order of the selected task array
   selectedTaskIds: Id[],
 |}
+
+const reorder = (
+  list: any[],
+  startIndex: number,
+  endIndex: number): any[] => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+  return result;
+};
 
 const withNewTaskIds = (column: Column, taskIds: Id[]): Column => ({
   id: column.id,

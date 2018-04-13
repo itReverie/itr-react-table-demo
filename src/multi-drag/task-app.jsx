@@ -8,7 +8,6 @@ import type { Result as ReorderResult } from './utils';
 import { mutliDragAwareReorder, multiSelectTo as multiSelect } from './utils';
 import type { DragStart, DropResult, DraggableLocation } from 'react-beautiful-dnd';
 import type { Task, Id } from '../types';
-import type { Entities } from './types';
 
 const Container = styled.div`
   display: flex;

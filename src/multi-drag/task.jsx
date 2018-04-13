@@ -2,9 +2,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Draggable } from 'react-beautiful-dnd';
-import { grid, colors, borderRadius } from '../constants';
+import { grid, colors, borderRadius } from './constants';
 import type { DraggableProvided, DraggableStateSnapshot } from 'react-beautiful-dnd';
-import type { Id, Task as TaskType } from '../types';
 
 // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
 const primaryButton = 0;

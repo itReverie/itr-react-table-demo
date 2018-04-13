@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import memoizeOne from 'memoize-one';
 import { Droppable } from 'react-beautiful-dnd';
-import { grid, colors, borderRadius } from '../constants';
+import { grid, colors, borderRadius } from './constants';
 import Task from './task';
 import type { DroppableProvided, DroppableStateSnapshot } from 'react-beautiful-dnd';
 import type { Column as ColumnType } from './types';
