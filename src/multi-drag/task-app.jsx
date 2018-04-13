@@ -27,8 +27,7 @@ const getTasks = (entities: Entities, columnId: Id): Task[] =>
     (taskId: Id): Task => entities.tasks[taskId]
   );
 
-const getTasksOfTable = (entities: Entities): Task[] =>
-  console.log(entities.columns.table)
+
   
 
 
@@ -39,10 +38,26 @@ export default class TaskApp extends Component<*, State> {
     draggingTaskId: null,
   }
 
+  getTasksOfTable = (entities: Entities): Task[] =>{
+    let fullCollection=this.state.entities.tasks;
+    //console.log('the full collection:',fullCollection);
+    let selectedIds=entities.columns.table.taskIds;
+    //console.log('the selected ids:',selectedIds);
+
+    //from the full list select the ones were dragged
+    let selectedTasks= fullCollection.filter(task=>{
+      return selectedIds.indexOf(task.id) !== -1;
+    });
+
+    //console.log('the selected tasks:',selectedTasks);
+  
+  }
+
   componentDidMount() {
     window.addEventListener('click', this.onWindowClick);
     window.addEventListener('keydown', this.onWindowKeyDown);
     window.addEventListener('touchend', this.onWindowTouchEnd);
+    this.getTasksOfTable=this.getTasksOfTable.bind(this);
   }
 
   componentWillUnmount() {
@@ -187,6 +202,7 @@ export default class TaskApp extends Component<*, State> {
     });
   }
 
+  // 
   render() {
     const entities: Entities = this.state.entities;
     const selected: Id[] = this.state.selectedTaskIds;
@@ -210,7 +226,7 @@ export default class TaskApp extends Component<*, State> {
           ))}
          
         </Container>
-        <button onClick={getTasksOfTable(entities)}>Query</button>
+        <button onClick={this.getTasksOfTable(entities)}>Query</button>
       </DragDropContext>
     );
   }
