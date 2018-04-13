@@ -163,7 +163,7 @@ export default class Task extends Component<Props> {
     // we would also need to add some extra logic to prevent the click
     // if this element was an anchor
     event.preventDefault();
-    this.props.toggleSelectionInGroup(this.props.task.name);
+    this.props.toggleSelectionInGroup(this.props.task.id);
   }
 
   performAction = (wasMetaKeyUsed: boolean, wasShiftKeyUsed: boolean) => {
@@ -175,16 +175,16 @@ export default class Task extends Component<Props> {
     } = this.props;
 
     if (wasMetaKeyUsed) {
-      toggleSelectionInGroup(task.name);
+      toggleSelectionInGroup(task.id);
       return;
     }
 
     if (wasShiftKeyUsed) {
-      multiSelectTo(task.name);
+      multiSelectTo(task.id);
       return;
     }
 
-    toggleSelection(task.name);
+    toggleSelection(task.id);
   }
 
   render() {
@@ -194,7 +194,7 @@ export default class Task extends Component<Props> {
     const selectionCount: number = this.props.selectionCount;
     const isGhosting: boolean = this.props.isGhosting;
     return (
-      <Draggable draggableId={task.name} index={index}>
+      <Draggable draggableId={task.id} index={index}>
         {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => {
           const shouldShowSelection: boolean = snapshot.isDragging && selectionCount > 1;
 

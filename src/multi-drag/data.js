@@ -13,7 +13,7 @@ let result= tableData.columns.map((column, index) => {
   column.key =index;
   return column});
 const tasks: Task[] = result;
-//console.log(tasks);
+console.log(tasks);
 
 
 const taskMap: TaskMap = tasks.reduce((previous: TaskMap, current: Task): TaskMap => {
@@ -24,14 +24,12 @@ const taskMap: TaskMap = tasks.reduce((previous: TaskMap, current: Task): TaskMa
 const columns: Column = {
   id: 'columns',
   title: 'Columns',
-  taskObjects: tasks,
   taskIds: tasks.map((task: Task): Id => task.id),
 };
 
 const table: Column = {
   id: 'table',
   title: 'Table',
-  taskObjects: [],
   taskIds: [],
 };
 
